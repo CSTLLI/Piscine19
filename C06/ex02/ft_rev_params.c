@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 13:42:21 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/18 19:08:43 by vcastell         ###   ########.fr       */
+/*   Created: 2021/02/18 19:25:26 by vcastell          #+#    #+#             */
+/*   Updated: 2021/02/18 19:57:20 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ft_sqrt(int nb)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	int x;
-	
-	x = 0;
-	if (nb  == 1)
-		return (1);
-	if (nb % 2 == 0)
-		while (x < nb / 2)
-		{
-			if ((x*x) == nb)
-				return (x);
-			x += 2;
-		}
-	else
-	{
-		x++;
-		while (x < nb / 2)
-		{
-			if (x*x == nb)
-				return (x);
-			x += 2;
-		}
-	}
-	return (0);
+	write(1, &c, 1);
 }
 
-//05
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
 
 #include <stdio.h>
-int main()
+
+int		main(int argc, char *argv[])
 {
-    printf("%d", ft_sqrt(2147483647));
-    return (0);
+	while (0 < --argc)
+	{
+		ft_putstr(argv[argc]);
+		ft_putchar('\n');
+	}
+	return (0);
 }
