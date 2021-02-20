@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:02:31 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/17 15:29:23 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/18 21:17:22 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,60 @@ int		ft_is_space(char c)
 			|| c == ' ');
 }
 
-int		ft_is_op(char c)
+int		ope(char *str)
 {
-	return (c == '+' || c == '-');
+	int i;
+	int neg;
+	int moins;
+
+	moins = 0;
+	i = 0;
+	while (str[i] && (str[i] < '0' || str[i] > '9'))
+	{
+		if (str[i] == '-')
+			moins++;
+		i++;
+	}
+	if (moins % 2 == 0)
+		return (1);
+	else
+		return (-1);
+	return (neg);
 }
 
-int		ft_is_num(char c)
+int		ft_check(char *str, int i)
 {
-	return (c >= '0' && c <= '9');
+	while (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+		i++;
+	return (i);
 }
 
 int		ft_atoi(char *str)
 {
 	int			mult;
 	int			i;
-	int			neg;
 	int			nb;
+	int			neg;
 
 	mult = 1;
 	i = 0;
 	nb = 0;
-	while (ft_is_space(str[i]) == 1)
-		i++;
-	neg = (str[i] == '-') ? -1 : 1;
-	while (ft_is_op(str[i]) == 1)
-		i++;
-	while (ft_is_num(str[i]) == 1)
-		i++;
-	i--;
-	while (i >= 0 && ft_is_num(str[i]) == 1)
+	while (str[i])
 	{
-		nb = nb + (str[i] - '0') * mult;
+		while (ft_is_space(str[i]) == 1)
+			i++;
+		ft_check(str, i);
 		i--;
-		mult = mult * 10;
+		while (i >= 0 && (str[i] >= '0' && str[i] <= '9'))
+		{
+			nb = nb + (str[i] - '0') * mult;
+			i--;
+			mult = mult * 10;
+		}
+		neg = ope(str);
+		return (nb * neg);
 	}
-	return (nb * neg);
+	return (0);
 }
