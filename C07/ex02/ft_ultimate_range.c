@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Helpers.c                                          :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 16:30:16 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/13 19:34:12 by vcastell         ###   ########.fr       */
+/*   Created: 2021/02/23 14:59:58 by vcastell          #+#    #+#             */
+/*   Updated: 2021/02/23 16:51:52 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h> //printf
-#include <unistd.h> //write
-
-void	ft_putchar(char c) // afficher un caractere
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str) // afficher un mot d'une liste
+int		ft_ultimate_range(int **range, int min, int max)
 {
 	int i;
+	int *tab;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (min >= max)
 	{
-		ft_putchar(str[i]);
-		printf("%c", str[i]);
-		i++;
+		tab = NULL;
+		return (0);
 	}
-}
-
-int		ft_strlen(char *str) // compte le nombre de caractères d'une liste
-{
-	int i;
-
+	if (!(tab = (int*)malloc((max - min) * 4)))
+		return (-1);
 	i = 0;
-	while (str[i] != '\0')
+	while (min < max)
 	{
+		tab[i] = min;
 		i++;
+		min++;
 	}
+	*range = tab;
 	return (i);
 }

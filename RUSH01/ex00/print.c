@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mdeclerf <mdeclerf@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 12:28:26 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/19 09:24:46 by vcastell         ###   ########.fr       */
+/*   Created: 2021/02/21 08:38:49 by mdeclerf          #+#    #+#             */
+/*   Updated: 2021/02/21 08:53:17 by mdeclerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
-{
-	int i;
-	int n;
+#include <unistd.h>
 
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	i = 1;
-	n = nb;
-	while (i < n)
+void	print(int tab[4][4])
+{
+	int		i;
+	int		j;
+	char	tower;
+
+	i = 0;
+	while (i < 4)
 	{
-		nb = nb * i;
+		j = 0;
+		while (j < 4)
+		{
+			tower = tab[i][j] + '0';
+			write(1, &tower, 1);
+			if (j < 3)
+				write(1, " ", 1);
+			j++;
+		}
+		write(1, "\n", 1);
 		i++;
 	}
-	return (nb);
 }

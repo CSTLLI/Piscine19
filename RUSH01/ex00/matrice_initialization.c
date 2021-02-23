@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   matrice_initialization.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mdeclerf <mdeclerf@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 13:14:43 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/19 09:38:50 by vcastell         ###   ########.fr       */
+/*   Created: 2021/02/20 23:47:33 by mdeclerf          #+#    #+#             */
+/*   Updated: 2021/02/21 18:37:39 by mdeclerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_power(int nb, int power)
+void	matrice_initialization(int tab[4][4])
 {
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
-		return (nb * ft_recursive_power(nb, power - 1));
+	int i;
+	int j;
+
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			tab[i][j] = 0;
+			j++;
+		}
+		i++;
+	}
 }

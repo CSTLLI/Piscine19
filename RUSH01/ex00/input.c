@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 19:52:29 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/21 20:23:34 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:44:34 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ int		*transmission(char *str, int *strn, int dep)
 			strn[c++] = 4;
 		dep += 2;
 	}
-	strn[c] = '\0';
+	// strn[c] = '\0';
 	return (strn);
 }

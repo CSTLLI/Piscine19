@@ -6,11 +6,12 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 14:21:37 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/22 19:42:38 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/23 17:36:15 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -42,20 +43,11 @@ char	*ft_strcpy(char *dest, char *src)
 
 char	*ft_strdup(char *src)
 {
-	int 	size;
-	char 	*cop;
+	int		size;
+	char	*cop;
 
 	size = ft_strlen(src);
 	cop = (char *)malloc(size);
 	ft_strcpy(cop, src);
 	return (cop);
-}
-
-//ex00
-#include <stdio.h>
-int main () {
-    char src[] = "Val";
-    printf("should be -->|Val|\n");
-    printf("is        -->|%s|\n\n", ft_strdup(src));
-    return 0;
 }
