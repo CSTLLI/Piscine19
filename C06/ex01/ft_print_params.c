@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 19:17:36 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/18 19:24:35 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/19 09:55:58 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putstr(char *str)
 int		main(int argc, char *argv[])
 {
 	int i;
-	
+
 	i = 1;
 	while (i < argc)
 	{

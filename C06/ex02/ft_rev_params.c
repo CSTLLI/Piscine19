@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 19:25:26 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/18 19:57:20 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/19 09:55:17 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
-
-#include <stdio.h>
 
 int		main(int argc, char *argv[])
 {

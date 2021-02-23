@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:21:04 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/18 20:49:30 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/19 09:54:04 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,19 @@ int		ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	myft_print(char **arg, int i)
-{
-	ft_putstr(arg[i]);
-	ft_putchar('\n');
-}
-
 int		main(int argc, char **argv)
 {
 	int		i;
-	char	*tmp;
+	char	*dep;
 
 	i = 1;
 	while (i < argc - 1)
 	{
 		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 		{
-			tmp = argv[i];
+			dep = argv[i];
 			argv[i] = argv[i + 1];
-			argv[i + 1] = tmp;
+			argv[i + 1] = dep;
 			i = 1;
 		}
 		else
@@ -70,7 +64,8 @@ int		main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		myft_print(argv, i);
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
 		i++;
 	}
 	return (0);
