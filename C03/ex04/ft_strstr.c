@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:04:41 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/16 20:40:24 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/24 19:14:12 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,24 @@ char	*ft_strstr(char *str, char *to_find)
 		j = 0;
 	}
 	return (0);
+}
+
+//ex04
+#include <stdio.h>
+#include <string.h>
+int main () {
+	char str[] = "xavier mait vit en Belgique mais est Francais";
+	char str2[] = "";
+	char to_find[] = "mais";
+	char to_find2[] = "";
+	char to_find3[] = "maiss";
+	printf("should be -->%s\n", strstr(str, to_find));
+	printf("is        -->%s\n\n", ft_strstr(str, to_find));
+	printf("should be -->%s\n", strstr(str, to_find2));
+	printf("is        -->%s\n\n", ft_strstr(str, to_find2));
+	printf("should be -->%s\n", strstr(str, to_find3));
+	printf("is        -->%s\n\n", ft_strstr(str, to_find3));
+	printf("should be -->%s\n", strstr(str2, to_find2));
+	printf("is        -->%s\n\n", ft_strstr(str2, to_find2));
+	return(0);
 }

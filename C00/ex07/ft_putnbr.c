@@ -6,7 +6,7 @@
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 13:42:32 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/10 16:57:00 by vcastell         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:31:13 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,6 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-void	intmin(void)
-{
-	ft_putchar('-');
-	ft_putchar(2 + '0');
-	ft_putchar(1 + '0');
-	ft_putchar(4 + '0');
-	ft_putchar(7 + '0');
-	ft_putchar(4 + '0');
-	ft_putchar(8 + '0');
-	ft_putchar(3 + '0');
-	ft_putchar(6 + '0');
-	ft_putchar(4 + '0');
-	ft_putchar(8 + '0');
 }
 
 void	ft_putnbr(int nb)
@@ -50,6 +35,6 @@ void	ft_putnbr(int nb)
 	}
 	if (nb == -2147483648)
 	{
-		intmin();
+		write(1, "-2147483648", 11);
 	}
 }

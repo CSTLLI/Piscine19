@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcastell <vcastell@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 10:02:31 by vcastell          #+#    #+#             */
-/*   Updated: 2021/02/23 21:40:10 by vcastell         ###   ########.fr       */
+/*   Created: 2021/02/25 14:39:26 by vcastell          #+#    #+#             */
+/*   Updated: 2021/02/25 14:39:28 by vcastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
-{
-	int a;
-	int b;
+# ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-	a = 0;
-	b = 1;
-	while ((*str >= 9 && *str <= 13) || (*str == ' ' || *str == '	'))
-		str++;
-	while (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			b *= -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		a = a * 10 + (*str - '0');
-		str++;
-	}
-	return (a * b);
-}
+typedef struct    s_stock_str
+{
+    int size;
+    char *str;
+    char *copy;
+}                t_stock_str;
+
+#endif
