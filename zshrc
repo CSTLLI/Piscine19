@@ -5,8 +5,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git) 
  
 source $ZSH/oh-my-zsh.sh 
- 
-export GEM_HOME=/usr/local/bundle 
+
 export PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin 
  
 alias nerf='vim ~/.zshrc' 
